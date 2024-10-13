@@ -1,28 +1,19 @@
-const urlParams = new URLSearchParams(window.location.search);
-const user = urlParams.get('user');
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טוען... - מערכת מעקב עבודה</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <h1 id="loadingMessage">טוען...</h1>
+        </div>
+    </div>
 
-const loadingMessage = document.getElementById('loadingMessage');
-
-if (user === 'arthur') {
-    loadingMessage.textContent = 'שבוע טוב ארתור!';
-    document.body.style.backgroundColor = '#000000'; // רקע שחור
-} else if (user === 'gil') {
-    loadingMessage.textContent = 'בוקר טוב גיל! המשך יום נעים';
-    document.body.style.backgroundColor = '#FFD700'; // רקע צהוב
-} else if (user === 'eran') {
-    loadingMessage.textContent = 'Have a nice day, Eran!';
-} else if (user === 'valery') {
-    loadingMessage.textContent = 'תעבוד כבר ימניאק חלאס לזיין במוח!';
-} else if (user === 'evgeniy') {
-    const motivationalQuotes = [
-        'אל תוותר!',
-        'כוח הרצון יוביל אותך קדימה!',
-        'הצלחה מחכה מעבר לפינה!',
-        'זה הזמן לשבור את כל המחסומים!',
-        'כל יום הוא הזדמנות חדשה!'
-    ];
-    const randomQuote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-    loadingMessage.textContent = randomQuote;
-    document.body.style.color = '#000000'; // טקסט שחור על לבן
-    document.body.style.backgroundColor = '#FFFFFF'; // רקע לבן
-}
+    <script src="js/loading.js"></script>
+</body>
+</html>
