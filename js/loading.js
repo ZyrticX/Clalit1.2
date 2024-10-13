@@ -1,18 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const username = urlParams.get('user');
-
+    const user = urlParams.get('user');
     const loadingMessage = document.getElementById('loadingMessage');
 
-    // ברוכים הבאים אישי בהתאם לשם המשתמש
-    if (username === 'arthur') {
+    if (user === 'arthur') {
         loadingMessage.textContent = 'שבוע טוב ארתור! כאן תוכל לעקוב אחרי התקדמות הפיזורים במחלקות';
-    } else if (username === 'gil') {
+    } else if (user === 'gil') {
         loadingMessage.textContent = 'יום טוב גיל! כאן תוכל לעקוב אחרי התקדמות הצוות במחלקות';
     }
 
-    // הצגת מסך טעינה למשך 5 שניות
+    // Redirect to tasks page after 5 seconds
     setTimeout(() => {
-        window.location.href = 'tasks.html'; // מעבר לדף המשימות אחרי הטעינה
-    }, 5000); // 5000ms = 5 שניות
+        window.location.href = 'tasks.html';
+    }, 5000);
 });
